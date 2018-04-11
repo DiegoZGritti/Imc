@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IMC </title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	</head>
+	<body>
+	<script>
+		function calculaIMC (){
+			var idade = parseInt(document.getElementById("inputIdade").value);
+			var peso = parseFloat(document.getElementById("inputPeso").value);
+			var altura = parseFloat(document.getElementById("inputAltura").value);
+			var sexo = document.getElementById("inputSexo").value;
+			console.log(sexo);
+			console.log(idade + " " + peso + " " + altura);
+			var imc = peso/(altura*altura);
+			console.log(imc);
+			if(idade < 65){
+					if(imc <= 16){
+					alert("Baixo peso muito grave");
+					}else if(imc <= 16,99){
+					alert("Baixo peso grave");
+					}else if(imc < 22){
+					alert("Baixo peso");
+					}else if(imc <= 27){
+					alert("Peso normal");
+					}else if(imc <=  30){
+					alert("Sobrepeso");
+					}else if(imc <= 35){
+					alert("Obesidade grau I ");
+					}else if(imc <= 39,9){
+					alert("Obesidade grau II");
+					}else{
+					alert("Obesidade grau III (obesidade mórbida)");
+					}
+			}else{
+				if(sexo=='2' || sexo == 2){
+					if(imc < 22){
+					alert("Baixo peso");
+					}else if(imc <= 27){
+					alert("Peso normal");
+					}else if(imc <=  32){
+					alert("Sobrepeso");
+					}else if(imc <= 37){
+					alert("Obesidade grau I ");
+					}else if(imc <= 41,9){
+					alert("Obesidade grau II");
+					}else{
+					alert("Obesidade grau III (obesidade mórbida)");
+					}
+				}else{
+					if(imc < 22){
+					alert("Baixo peso");
+					}else if(imc <= 27){
+					alert("Peso normal");
+					}else if(imc <=  30){
+					alert("Sobrepeso");
+					}else if(imc <= 35){
+					alert("Obesidade grau I ");
+					}else if(imc <= 39,9){
+					alert("Obesidade grau II");
+					}else{
+					alert("Obesidade grau III (obesidade mórbida)");
+					}
+				}
+			}
+		}
+	</script>
+	
+	<div class="col-md-4">
+		<form class="needs-validation" novalidate
+		 <label for="validationTooltip01">Sexo </label>
+		<select id="inputSexo" class="custom-select custom-select-lg mb-3">
+		  <option selected></option>
+		  <option value="1">Masculino</option>
+		  <option value="2">Feminino</option>
+		</select>
+		  <div class="form-row">
+			<div class="col-md-4 mb-3">
+			  <label for="inputAltura">Idade</label>
+			  <input type="text" class="form-control" id="inputIdade" placeholder="Idade" value="18" required>
+			  <div class="valid-tooltip">
+				Digite uma idade valida.
+			  </div>
+			</div>
+			<div class="col-md-4 mb-3">
+			  <label for="inputAltura">Altura</label>
+			  <input type="text" class="form-control" id="inputAltura" placeholder="Altura" value="1.80" required>
+			  <div class="valid-tooltip">
+				Altura invalida.
+			  </div>
+			</div>
+			<div class="col-md-4 mb-3">
+			  <label for="inputPeso">Peso</label>
+			  <input type="text" class="form-control" id="inputPeso" placeholder="Peso" value="80" required>
+			  <div class="valid-tooltip">
+				Peso invalida.
+			  </div>
+			</div>
+		  </div>
+		  <button class="col-md-12 btn btn-primary" type="button" onclick="calculaIMC()">Calcular</button>
+		</form>
+	</div>
+	
+	</body>
+</html>
